@@ -33,7 +33,7 @@ module Api
     end
 
     def update
-      word - Word.find(params[:id])
+      word = Word.find(params[:id])
       # word = current_user.words.find(params[:id])
       if word.update(word_params)
         render json: {
