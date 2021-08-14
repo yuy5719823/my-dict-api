@@ -1,20 +1,19 @@
 module Api
   class WordsController < ApplicationController
-
-    # before_action :authenticate_user!, only: [ :index, :create, :show, :create, :update, :destroy ]
+    before_action :authenticate_api_user!
 
     def index
       # words = Word.all
-      words = Word.includes(:user).order(createdat: :desc).limit(20)
-      # words = current_user.words.order(creaetd_at: :desc)
+      # words = Word.includes(:user).order(createdat: :desc).limit(20)
+      words = current_api_user.words.order(creaetd_at: :desc)
       render json: {
         words: words
       }, status: :ok
     end
 
     def create
-      word = Word.new(word_params)
-      # word = current_user.words.new(word_params)
+      # word = Word.new(word_params)
+      word = current_user.words.new(word_params)
       if word.save!
         render json: {
           word: word
@@ -25,8 +24,8 @@ module Api
     end
 
     def show
-      word = Word.find(params[:id])
-      # word = current_user.words.find(params[:id])
+      # word = Word.find(params[:id])
+      word = current_user.words.find(params[:id])
       render json: {
         word: word
       }, status: :ok
@@ -45,8 +44,8 @@ module Api
     end
 
     def destroy
-      word = Word.find(params[:id])
-      # word = current_user.posts.find(params[:id])
+      # word = Word.find(params[:id])
+      word = current_user.posts.find(params[:id])
       if word.destroy
         render json: {}, status: :ok
       else
