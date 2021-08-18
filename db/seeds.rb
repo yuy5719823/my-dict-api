@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+number = 0
 3.times do |n|
   user = User.new(
     name: "test_user_name#{n}",
@@ -13,9 +14,10 @@
     password: "password"
   )
   5.times do |n|
+    number += 1
     user.words.build(
-      word: "テスト",
-      memo: "テストだよ"
+      word: "テスト_#{n}",
+      memo: "テストだよ_#{number}"
     )
   end
 
