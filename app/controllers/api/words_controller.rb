@@ -5,7 +5,7 @@ module Api
     def index
       # words = Word.all
       # words = Word.includes(:user).order(createdat: :desc).limit(20)
-      words = current_api_user.words.order(creaetd_at: :desc)
+      words = current_api_user.words.order(creaetd_at: :desc).where(archive: false)
       render json: words, status: :ok
     end
 
@@ -33,9 +33,7 @@ module Api
       # word = Word.find(params[:id])
       word = current_api_user.words.find(params[:id])
       if word.update(word_params)
-        render json: {
-          word: word
-        }, status: :ok
+        render json: {}, status: :ok
       else
         rendeer json: {}, status: :internal_server_error
       end
