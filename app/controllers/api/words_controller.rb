@@ -9,25 +9,26 @@ module Api
       render json: words, status: :ok
     end
 
+    def archive_index
+      words = current_api_user.words.order(creaetd_at: :desc).where(archive: true)
+      render json: words, status: :ok
+    end
+
     def create
       # word = Word.new(word_params)
-      word = current_api_user.words.new(word_params)
+      word = current_api_user.words.build(word_params)
       if word.save!
-        render json: {
-          word: word
-        }, status: :created
+        render json: {}, status: :created
       else
         render json: {}, status: :internal_server_error
       end
     end
 
-    def show
-      # word = Word.find(params[:id])
-      word = current_api_user.words.find(params[:id])
-      render json: {
-        word: word
-      }, status: :ok
-    end
+    # def show
+    #   # word = Word.find(params[:id])
+    #   word = current_api_user.words.find(params[:id])
+    #   render json: word, status: :ok
+    # end
 
     def update
       # word = Word.find(params[:id])
@@ -41,7 +42,7 @@ module Api
 
     def destroy
       # word = Word.find(params[:id])
-      word = current_api_user.posts.find(params[:id])
+      word = current_api_user.words.find(params[:id])
       if word.destroy
         render json: {}, status: :ok
       else
