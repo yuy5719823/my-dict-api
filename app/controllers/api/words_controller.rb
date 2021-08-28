@@ -5,12 +5,12 @@ module Api
     def index
       # words = Word.all
       # words = Word.includes(:user).order(createdat: :desc).limit(20)
-      words = current_api_user.words.order(creaetd_at: :desc).where(archive: false)
+      words = current_api_user.words.order(updated_at: :desc).where(archive: false)
       render json: words, status: :ok
     end
 
     def archive_index
-      words = current_api_user.words.order(creaetd_at: :desc).where(archive: true)
+      words = current_api_user.words.order(updated_at: :desc).where(archive: true)
       render json: words, status: :ok
     end
 
