@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :words, dependent: :destroy
+
+  validates :name, presence: true
 end
