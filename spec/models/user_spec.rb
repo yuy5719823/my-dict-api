@@ -48,22 +48,4 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # describe 'ログイン機能' do
-  #   context '' do
-      
-  #   end
-  # end
-
-  # describe 'ユーザー情報の変更' do
-  #   context '' do
-      
-  #   end
-  # end
-
-  # describe 'ユーザーの削除' do
-  #   context '' do
-      
-  #   end
-  # end
-
 end
