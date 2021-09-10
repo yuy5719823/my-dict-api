@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :word do
     association :user
-    word { 'タイトル' }
-    memo { 'メモ' }
+    word { Faker::Lorem.word }
+    memo { Faker::Lorem.sentence }
   end
 end
