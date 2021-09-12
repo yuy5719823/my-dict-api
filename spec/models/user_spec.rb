@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
         registered_user = User.find(1)
 
         expect(registered_user.name).to eq('user')
-        expect(registered_user.email).to eq('sample@example.com')
+        expect(registered_user.email).to eq('sample1@example.com')
 
         expect(User.all.count).to eq 1
       end
