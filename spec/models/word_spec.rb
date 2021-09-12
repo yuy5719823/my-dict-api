@@ -4,7 +4,7 @@ RSpec.describe Word, type: :model do
 
   describe '単語の新規作成' do
 
-    let(:word) { FactoryBot.build(:word) }
+    let(:word) { FactoryBot.build(:word_default) }
 
     context '単語を正常に登録' do
       it '単語のタイトルとメモを記述' do
