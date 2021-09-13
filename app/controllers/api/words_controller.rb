@@ -3,19 +3,16 @@ module Api
     before_action :authenticate_api_user!
 
     def index
-      # words = Word.all
-      # words = Word.includes(:user).order(createdat: :desc).limit(20)
-      words = current_api_user.words.order(updated_at: :desc).where(archive: false)
+      words = current_api_user.words.active.sorted
       render json: words, status: :ok
     end
 
     def archive_index
-      words = current_api_user.words.order(updated_at: :desc).where(archive: true)
+      words = current_api_user.words.archive.sorted
       render json: words, status: :ok
     end
 
     def create
-      # word = Word.new(word_params)
       word = current_api_user.words.build(word_params)
       if word.save!
         render json: {}, status: :created
@@ -31,7 +28,6 @@ module Api
     # end
 
     def update
-      # word = Word.find(params[:id])
       word = current_api_user.words.find(params[:id])
       if word.update(word_params)
         render json: {}, status: :ok
@@ -41,7 +37,6 @@ module Api
     end
 
     def destroy
-      # word = Word.find(params[:id])
       word = current_api_user.words.find(params[:id])
       if word.destroy
         render json: {}, status: :ok
