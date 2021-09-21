@@ -8,7 +8,7 @@
 
 user = User.new(
   name: "test_user_name",
-  email: "test#{n}@example.com",
+  email: "test@example.com",
   password: "password"
 )
 5.times do |n|
