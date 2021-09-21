@@ -12,7 +12,6 @@ user = User.new(
   password: "password"
 )
 5.times do |n|
-  number += 1
   user.words.build(
     word: "テスト_#{n}",
     memo: "テストだよ_#{n}"
