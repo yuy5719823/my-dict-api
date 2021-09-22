@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-  name: "test_user",
-  email: "test@example.com",
+  name: "guest_user",
+  email: "guest@example.com",
   password: "password"
 )
 5.times do |n|
