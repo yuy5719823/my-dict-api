@@ -8,14 +8,16 @@
 URL : https://mydictapp.netlify.app
 
 # デモ
+
 https://user-images.githubusercontent.com/70702608/134918331-1d0a3e2c-5a03-47e2-b306-9957a5d27103.mov
 
-#　技術スタック
+
+# 技術スタック
 ・Backend : Ruby on Rails
 ・Frontend : React
 ・Infra : Heroku
 
-#　実装機能
+# 実装機能
 ・ユーザー登録、ログイン機能
 ・ゲストログイン機能
 ・単語追加機能
