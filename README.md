@@ -1,24 +1,22 @@
-# README
+# MyDictionary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+”自分だけの辞書を作ろう”をスローガンに作成したアプリです。
 
-Things you may want to cover:
+初めて見る単語、聞いたことはあるけど意味をイマイチ理解していない単語、
+などをこのアプリに追加していくことで自分だけの辞書を作っていきます。
 
-* Ruby version
+URL : https://mydictapp.netlify.app
 
-* System dependencies
+# デモ
+https://user-images.githubusercontent.com/70702608/134918331-1d0a3e2c-5a03-47e2-b306-9957a5d27103.mov
 
-* Configuration
+#　技術スタック
+・Backend : Ruby on Rails
+・Frontend : React
+・Infra : Heroku
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#　実装機能
+・ユーザー登録、ログイン機能
+・ゲストログイン機能
+・単語追加機能
+・単語ソート機能
